@@ -66,7 +66,7 @@ class MinHeap {
         int current = size;
         size++;
 
-        while(heap[current] < heap[parent(current)]) {
+        while(current != 0 && heap[current] < heap[parent(current)]) {
             swap(current, parent(current));
             current = parent(current);
         }
@@ -96,7 +96,7 @@ class MinHeap {
         int smallest = i;
 
         if(left < size && heap[left] < heap[i]) {
-            smallest = right;
+            smallest = left;
         }
 
         if(right < size && heap[right] < heap[smallest]) {
